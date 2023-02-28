@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-import { GithubSite } from '@/components/custom'
 </script>
 
 <template>
@@ -9,11 +8,9 @@ import { GithubSite } from '@/components/custom'
     </div>
     <div class="ml-2">
       <h2 class="font-bold text-md">
-        ChenZhaoYu
+        KuanYaLiao
       </h2>
-      <p class="text-xs text-gray-500">
-        <GithubSite />
-      </p>
+      <p class="text-xs text-gray-500" />
     </div>
   </div>
 </template>

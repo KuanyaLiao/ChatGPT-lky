@@ -8,7 +8,7 @@
     </div>
     <div class="ml-2">
       <h2 class="font-bold text-md">
-        KuanYaLiao
+        ChatGPT
       </h2>
       <p class="text-xs text-gray-500" />
     </div>

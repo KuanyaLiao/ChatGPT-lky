@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 import { NButton, NInput, useMessage } from 'naive-ui'
-import type { Language, Theme } from '@/store/modules/app/helper'
+import type { Theme } from '@/store/modules/app/helper'
 import { SvgIcon } from '@/components/common'
 import { useAppStore, useUserStore } from '@/store'
 import type { UserInfo } from '@/store/modules/user/helper'
 
-interface Emit {
-  (event: 'update'): void
-}
+// interface Emit {
+//   (event: 'update'): void
+// }
 
-const emit = defineEmits<Emit>()
+// const emit = defineEmits<Emit>()
 
 const appStore = useAppStore()
 const userStore = useUserStore()
@@ -27,14 +27,14 @@ const name = ref(userInfo.value.name ?? '')
 
 const description = ref(userInfo.value.description ?? '')
 
-const language = computed({
-  get() {
-    return appStore.language
-  },
-  set(value: Language) {
-    appStore.setLanguage(value)
-  },
-})
+// const language = computed({
+//   get() {
+//     return appStore.language
+//   },
+//   set(value: Language) {
+//     appStore.setLanguage(value)
+//   },
+// })
 
 const themeOptions: { label: string; key: Theme; icon: string }[] = [
   {
@@ -54,10 +54,10 @@ const themeOptions: { label: string; key: Theme; icon: string }[] = [
   },
 ]
 
-const languageOptions: { label: string; key: Language; value: Language }[] = [
-  { label: '中文', key: 'zh-CN', value: 'zh-CN' },
-  { label: 'English', key: 'en-US', value: 'en-US' },
-]
+// const languageOptions: { label: string; key: Language; value: Language }[] = [
+//   { label: '中文', key: 'zh-CN', value: 'zh-CN' },
+//   { label: 'English', key: 'en-US', value: 'en-US' },
+// ]
 
 function updateUserInfo(options: Partial<UserInfo>) {
   userStore.updateUserInfo(options)

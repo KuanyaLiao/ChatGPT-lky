@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @author: sueRimn
+ * @Date: 2023-03-13 18:58:15
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2023-03-13 19:05:05
+-->
 <script setup lang='ts'>
 import { computed } from 'vue'
 import { NAvatar } from 'naive-ui'
@@ -11,8 +19,8 @@ const userInfo = computed(() => userStore.userInfo)
 </script>
 
 <template>
-  <div class="flex items-center">
-    <div class="w-10 h-10 overflow-hidden rounded-full">
+  <div class="flex items-center overflow-hidden">
+    <div class="w-10 h-10 overflow-hidden rounded-full shrink-0">
       <template v-if="isString(userInfo.avatar) && userInfo.avatar.length > 0">
         <NAvatar
           size="large"
@@ -29,7 +37,7 @@ const userInfo = computed(() => userStore.userInfo)
       <h2 class="font-bold text-md">
         {{ userInfo.name ?? 'ChatGPT' }}
       </h2>
-      <p class="text-xs text-gray-500">
+      <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span
           v-if="isString(userInfo.description) && userInfo.description !== ''"
           v-html="userInfo.description"

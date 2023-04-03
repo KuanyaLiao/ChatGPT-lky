@@ -1,9 +1,17 @@
+<!--
+ * @Description:
+ * @version:
+ * @author: sueRimn
+ * @Date: 2023-04-03 18:46:47
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2023-04-03 19:18:29
+-->
 <script setup lang='ts'>
 import { computed, useAttrs } from 'vue'
 import { Icon } from '@iconify/vue'
 
 interface Props {
-  icon?: string
+  Icon?: string
 }
 
 defineProps<Props>()
@@ -17,5 +25,5 @@ const bindAttrs = computed<{ class: string; style: string }>(() => ({
 </script>
 
 <template>
-  <Icon :icon="icon" v-bind="bindAttrs" />
+  <Icon :icon="Icon" v-bind="bindAttrs" />
 </template>

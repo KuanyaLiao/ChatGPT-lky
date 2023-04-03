@@ -9,6 +9,7 @@ interface ConfigState {
   apiModel?: string
   socksProxy?: string
   httpsProxy?: string
+  balance?: string
 }
 
 const loading = ref(false)

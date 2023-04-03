@@ -1,13 +1,18 @@
+<!--
+ * @Description:
+ * @version:
+ * @author: sueRimn
+ * @Date: 2023-04-03 18:48:29
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2023-04-03 18:50:10
+-->
 <script setup lang='ts'>
 import { computed, ref } from 'vue'
 import { NModal, NTabPane, NTabs } from 'naive-ui'
 import General from './General.vue'
 import About from './About.vue'
+import { useAuthStore } from '@/store'
 import { SvgIcon } from '@/components/common'
-
-const props = defineProps<Props>()
-
-const emit = defineEmits<Emit>()
 
 interface Props {
   visible: boolean
@@ -16,6 +21,14 @@ interface Props {
 interface Emit {
   (e: 'update:visible', visible: boolean): void
 }
+
+const props = defineProps<Props>()
+
+const emit = defineEmits<Emit>()
+
+const authStore = useAuthStore()
+
+const isChatGPTAPI = computed<boolean>(() => !!authStore.isChatGPTAPI)
 
 const active = ref('General')
 
